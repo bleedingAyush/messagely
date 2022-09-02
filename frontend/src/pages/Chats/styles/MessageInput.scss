@@ -1,0 +1,38 @@
+@use "../../../constants" as *;
+
+.send-message-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0rem 2rem 0rem 2rem;
+  margin-bottom: 1rem;
+
+  input {
+    width: 86.5%;
+    height: 40px;
+    background-color: $bg-light-variant;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: $white;
+  }
+
+  .send-chat-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: linear-gradient(89.67deg, #e67be1 -5.13%, #708aff 99.68%);
+  }
+}
+
+@media (max-width: 700px) {
+  .send-message-container {
+    padding: 0 1rem;
+  }
+}

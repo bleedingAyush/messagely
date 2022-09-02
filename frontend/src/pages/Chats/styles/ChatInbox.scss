@@ -1,0 +1,17 @@
+@use "../../../constants" as *;
+
+.chatbox-container {
+  height: 100vh;
+  background-color: $bg-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  border-left: 1.2px solid #575757;
+}
+
+@media (max-width: 700px) {
+  .chatbox-container {
+    border: none;
+  }
+}

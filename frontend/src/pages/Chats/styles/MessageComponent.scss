@@ -1,0 +1,103 @@
+@use "../../../constants" as *;
+.message-container {
+  display: flex;
+  padding-left: 5%;
+  padding-right: 5%;
+  gap: 0.5rem;
+  .profile-pic {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+}
+
+.sender-message {
+  justify-content: flex-start;
+}
+
+.user-message {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+}
+
+.date {
+  justify-content: center;
+}
+
+.text-container {
+  padding: 4px 8px;
+  align-items: center;
+  border-radius: 2px;
+  max-width: 70%;
+  color: $white;
+}
+
+.time {
+  font-size: 12px;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  float: right;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.date-container {
+  max-width: 100% !important;
+  background-color: $bg-light-variant;
+  color: $white;
+}
+
+.date-container span {
+  font-size: 14px;
+  padding: 4px 8px;
+}
+
+.text-container.user {
+  background-image: linear-gradient(89.67deg, #e67be1 -5.13%, #708aff 99.68%);
+}
+
+.text-container.sender {
+  background-color: $bg-light-variant-two;
+}
+
+.small-margin {
+  margin-bottom: 2px;
+}
+
+.large-margin {
+  margin-bottom: 12px;
+}
+
+.loading-container-msg-component {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 35px;
+  top: 11%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  background-color: $bg-light-variant-two;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1300px) {
+  .text-container {
+    max-width: 75%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .text-container {
+    max-width: 95%;
+  }
+  .message-container {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}

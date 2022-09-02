@@ -1,0 +1,96 @@
+@use "../../../constants" as *;
+
+.header {
+  width: 100%;
+  background-color: $bg-light-variant;
+  height: 4rem;
+  box-shadow: 0px 7px 10px 0px rgba(0, 0, 0, 0.25%);
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .sticky-date {
+    display: flex;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 14px;
+    top: calc(100%);
+    z-index: 5;
+    text-align: center;
+    border-radius: 4px;
+    color: $white;
+    transition: 0.2s ease;
+    opacity: 0;
+  }
+
+  .user-details-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 0.5rem;
+    position: relative;
+  }
+  .sticky-date.visible {
+    top: calc(100% + 0.5rem);
+    transition: 0.2s ease;
+    opacity: 1;
+  }
+
+  .sticky-date span {
+    padding: 2px 10px;
+    background-color: $bg-light-variant;
+  }
+
+  .back-btn {
+    display: none;
+    margin-right: 0.5rem;
+  }
+
+  .user-details {
+    display: flex;
+    flex-direction: row;
+    gap: 0.7rem;
+
+    .user-status-container {
+      display: flex;
+      flex-direction: column;
+    }
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+  }
+
+  .username {
+    font-family: "Montserrat";
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 1rem;
+    color: $white;
+  }
+}
+
+@media (max-width: 700px) {
+  .header {
+    .back-btn {
+      display: block;
+      border-radius: 50%;
+      outline: none;
+      border: none;
+      width: 35px;
+      height: 35px;
+      display: grid;
+      place-items: center;
+      background-color: transparent;
+      transition: all 0.2s ease;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $bg-light-variant-two;
+      }
+    }
+  }
+}

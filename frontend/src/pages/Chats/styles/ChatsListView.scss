@@ -1,0 +1,40 @@
+@use "../../../constants" as *;
+@use "../../../constants/list";
+
+@function chatInboxWidth() {
+  $chatWidth: calc(100vw - 320px);
+  $quarterwidth: calc(30 / 100 * 100vw);
+  $size: calc(max($quarterwidth, 300px));
+  $greater: $size > 300px;
+  @if ($size > 300px) {
+    $sub: $size - 300px;
+    @return $chatWidth - $sub;
+  } @else {
+    @return $chatWidth;
+  }
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.6rem;
+}
+
+.outlet-container {
+  position: absolute;
+  height: 100%;
+  width: 69%;
+  right: 0;
+  top: 0;
+}
+
+@media (max-width: 700px) {
+  .chat-container {
+    padding-left: 0;
+  }
+
+  .outlet-container {
+    display: block;
+    z-index: 99;
+  }
+}
