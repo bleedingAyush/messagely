@@ -1,0 +1,240 @@
+@use "../../../constants" as *;
+.profile {
+  position: absolute;
+
+  .profile-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+    padding-left: 0.8rem;
+    position: relative;
+
+    width: 60px;
+    height: 48px;
+    z-index: 1;
+
+    img {
+      height: 100%;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+  }
+  .sidebar {
+    background-color: $bg-color;
+    position: absolute;
+    gap: 20px;
+    width: calc(max(30vw, 300px) + 10px);
+    height: 100vh;
+    top: 0rem;
+    // padding-top: 5rem;
+    align-items: center;
+    // opacity: 0;
+    left: 0;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+
+    // pointer-events: none;
+
+    transition: 300ms ease;
+    will-change: transform;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .sidebar.show {
+    box-shadow: 3px 7px 2px rgba(0, 0, 0, 0.25);
+    -webkit-transform: translateX(0%);
+    pointer-events: inherit;
+    transform: translateX(0%);
+  }
+
+  .loading-container-profilePic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 60px;
+    top: 35%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    .loading-ring {
+      width: 58px;
+      height: 54px;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+    }
+
+    .loading-ring div {
+      width: 48px;
+      height: 48px;
+      border: 3.5px solid $white;
+      border-radius: 50%;
+      animation: loading-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+      border-color: $white transparent transparent transparent;
+    }
+
+    @keyframes loading-ring {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  .image-container {
+    overflow: hidden;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: grid;
+
+    .camera {
+      color: $white;
+      position: absolute;
+      z-index: 50;
+      right: 15px;
+      bottom: 7px;
+      pointer-events: none;
+    }
+
+    .file-upload-input {
+      font-size: 0;
+      background-color: $light-purple-blue;
+      border-radius: 50%;
+      color: #f2f2f2;
+      margin-top: 1rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      position: absolute;
+      bottom: 0;
+      right: 5%;
+      cursor: pointer;
+      box-shadow: -1px 2px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .file-upload-input::file-selector-button {
+      display: none;
+    }
+
+    input::-webkit-file-upload-button {
+      visibility: hidden;
+    }
+    input::before {
+      display: inline-block;
+      outline: none;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+  }
+  .back-btn {
+    position: absolute;
+    display: block;
+    top: 5%;
+    left: 5%;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    width: 35px;
+    height: 35px;
+    display: grid;
+    place-items: center;
+    background-color: transparent;
+    transition: all 0.2s ease;
+    cursor: pointer;
+
+    &:active {
+      background-color: $bg-light-variant-two;
+    }
+  }
+
+  .username-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    width: 70%;
+
+    span {
+      font-size: 1.1rem;
+    }
+  }
+
+  .input-container input {
+    background-color: transparent;
+    border: 2px solid rgb(156, 156, 156);
+    border-radius: 8px;
+    outline: none;
+    color: rgb(245, 245, 245);
+    width: 100%;
+
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-family: "Montserrat";
+    padding-right: 2.2rem;
+  }
+
+  .input-container {
+    position: relative;
+  }
+
+  .loading-ring {
+    position: absolute;
+    right: 2px;
+    top: 8%;
+    cursor: pointer;
+  }
+
+  .check {
+    position: absolute;
+    right: 10px;
+    top: 25%;
+    cursor: pointer;
+  }
+
+  .logout {
+    width: 70%;
+    position: absolute;
+    bottom: 2rem;
+    border-radius: 4px;
+
+    display: flex;
+    padding: 0.8rem 0.5rem;
+    border: none;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $bg-light-variant;
+    cursor: pointer;
+    span {
+      font-size: 1.1rem;
+      color: $white;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .profile {
+    position: absolute;
+    height: 0vh;
+    z-index: 3;
+    .profile-btn {
+      padding-left: 0.8rem;
+    }
+
+    .sidebar {
+      width: 100vw;
+    }
+  }
+  .profile.hide {
+    display: none;
+  }
+}

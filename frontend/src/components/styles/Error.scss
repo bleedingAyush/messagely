@@ -1,0 +1,17 @@
+@use "../../constants" as *;
+.error-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+  position: relative;
+  .no-data {
+    width: 10rem;
+    height: 70%;
+  }
+  button {
+    @extend %button;
+    bottom: 0;
+  }
+}
