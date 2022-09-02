@@ -1,0 +1,141 @@
+@use "../../../constants" as *;
+
+.title {
+  position: absolute;
+  top: 13%;
+  font-size: 3rem;
+  font-weight: 500;
+  font-family: "Dancing Script";
+}
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+
+  .submit-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: Max(20rem, 25vw);
+    padding: 0.3rem;
+    background-image: linear-gradient(89.67deg, #e67be1 -5.13%, #708aff 99.68%);
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.3rem;
+    color: rgb(245, 245, 245);
+    cursor: pointer;
+  }
+
+  .error-text {
+    font-size: 12px;
+    padding: 3px;
+    color: red;
+    display: none;
+    white-space: wrap;
+  }
+
+  .link {
+    position: absolute;
+    width: Max(20rem, 25vw);
+    bottom: 5%;
+  }
+
+  .link {
+    text-decoration: none;
+  }
+
+  .link button {
+    width: Max(20rem, 25vw);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    $border: 2px;
+    color: #fff;
+    background: $bg-color;
+    font-size: 1rem;
+    background-clip: padding-box;
+    border: solid $border transparent;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      margin: -$border;
+      border-radius: inherit;
+      background: linear-gradient(89.67deg, #e67be1 -5.13%, #708aff 99.68%);
+    }
+  }
+
+  input.invalidInput {
+    border: 2px solid red;
+  }
+
+  input.invalidInput ~ .error-text {
+    display: block;
+  }
+
+  input:invalid[focused="true"] {
+    border: 2px solid red;
+  }
+
+  input:invalid[focused="true"] ~ span {
+    display: block;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  width: Max(20rem, 25vw);
+  gap: 0.5rem;
+  position: relative;
+}
+
+.file-input {
+  font-size: 1rem;
+  font-family: "Montserrat";
+  border: 2px solid #9c9c9c;
+  padding: 5px;
+  width: max(20rem, 25vw);
+  border-radius: 8px;
+}
+
+.form-input input {
+  background-color: transparent;
+  border: 2px solid rgb(156, 156, 156);
+  border-radius: 8px;
+  outline: none;
+  color: rgb(245, 245, 245);
+  width: Max(20rem, 25vw);
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-family: "Montserrat";
+}
+
+.form-input label {
+  font-family: "Montserrat";
+  font-weight: 500;
+}
+
+::-ms-reveal {
+  filter: invert(100%);
+}
