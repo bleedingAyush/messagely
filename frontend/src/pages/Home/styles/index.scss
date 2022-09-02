@@ -1,0 +1,138 @@
+@use "../../../constants" as *;
+@use "../../../constants/list";
+
+%button-underline {
+  content: "";
+  position: absolute;
+  background-color: $light-purple-blue;
+  width: 100%;
+  height: 2.5px;
+  left: 0%;
+  bottom: 0;
+}
+
+%button {
+  position: absolute;
+  background-color: $light-purple-blue;
+  outline: none;
+  border-radius: 4px;
+  height: 1.5rem;
+  border-color: transparent;
+  // z-index: 99;
+  color: $white;
+  font-family: "Montserrat";
+  font-weight: 500;
+  box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+%toggle-btn-active {
+  background-color: $bg-light-variant-two;
+  overflow: hidden;
+}
+
+.home-container {
+  padding-top: 0.7rem;
+  // margin-left: 1rem;
+  padding-right: 0.5rem;
+
+  .home-img {
+    position: absolute;
+    top: 50%; /* position the top  edge of the element at the middle of the parent */
+    left: 70%; /* position the left edge of the element at the middle of the parent */
+
+    transform: translate(-70%, -50%);
+    width: 20rem;
+    pointer-events: none;
+  }
+}
+
+.create-group-container {
+  width: max(30vw, 300px);
+  height: 4rem;
+  position: relative;
+  margin-left: 0.6rem;
+}
+
+.group-chat-btn {
+  @extend %button;
+  top: 20%;
+  right: 0;
+}
+
+.home-nav {
+  width: Max(30vw, 300px);
+  margin-left: 0.6rem;
+}
+
+.toggle {
+  padding-bottom: 1rem;
+}
+
+.toggle button {
+  width: 50%;
+  height: 2rem;
+  font-family: "Montserrat";
+  font-weight: 500;
+  background-color: $bg-light-variant;
+  color: $white;
+  border: none;
+  position: relative;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.toggle .message-btn {
+  border-radius: 2px 0 0 2px; // for top-left and bottom left
+}
+
+.toggle .users-btn {
+  border-radius: 0 2px 2px 0; // for top-right and bottom-right
+}
+
+.chats.active {
+  .message-btn {
+    @extend %toggle-btn-active;
+  }
+  .message-btn::after {
+    @extend %button-underline;
+  }
+}
+
+.users.active {
+  .users-btn {
+    @extend %toggle-btn-active;
+  }
+  .users-btn::after {
+    @extend %button-underline;
+  }
+}
+
+@media (max-width: 700px) {
+  .home-container {
+    width: 100%;
+    margin-right: 0rem;
+    margin-left: 0rem;
+    padding: 1rem 0.8rem 0px 0.8rem;
+    .home-img {
+      display: none;
+    }
+  }
+
+  .create-group-container {
+    width: 100%;
+    margin-left: 0;
+    .modal {
+      height: 96vh;
+    }
+  }
+
+  .home-nav {
+    width: 100%;
+    margin-left: 0;
+  }
+  .home-nav.hide {
+    display: none;
+  }
+}
