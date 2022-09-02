@@ -1,0 +1,71 @@
+.user-container {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  padding: 0px;
+  color: white;
+  border-radius: 2px;
+  cursor: pointer;
+  .user {
+    height: 5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 0px 10px 0px 10px;
+    position: relative;
+    img {
+      height: 3.4rem;
+      width: 3.4rem;
+      border-radius: 50%;
+    }
+    .user-details {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding-left: 15px;
+      padding-right: 15px;
+      gap: 0.25rem;
+      overflow: hidden;
+
+      .user-name {
+        font-family: "Montserrat";
+        font-weight: 500;
+        font-size: 18px;
+      }
+
+      // .user-chat-activity {
+      //   font-size: 13px;
+      //   font-family: "Montserrat";
+      //   font-weight: 400;
+      //   text-overflow: ellipsis;
+      //   white-space: nowrap;
+      //   overflow: hidden;
+      //   width: 100%;
+      //   float: left;
+      // }
+    }
+  }
+}
+
+.user-container.hover {
+  &:hover {
+    // background-color: $bg-light-variant-two;
+    // background: linear-gradient();
+    background: linear-gradient(93.97deg, #252525 16.42%, #2b2c30 109.2%);
+  }
+}
+
+@media (max-width: 700px) {
+  .list-view.hide {
+    display: none;
+  }
+  .user-container {
+    margin-top: 0rem;
+  }
+  .user-container.hover {
+    &:hover {
+      background: transparent;
+    }
+  }
+}
