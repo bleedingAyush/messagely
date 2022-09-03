@@ -9,6 +9,7 @@ const chatRoute = require("./routes/chatRoutes");
 const messageRoute = require("./routes/messageRoutes");
 const { errorHandler, notFound } = require("./middleware/errorMiddleware");
 const server = require("http").createServer(app);
+const path = require("path");
 
 dotenv.config();
 connectDB(); // connect to the database.
@@ -21,6 +22,24 @@ app.use("/", authRoute);
 app.use("/", userRoute);
 app.use("/", chatRoute);
 app.use("/", messageRoute);
+
+// --------------------------deployment------------------------------
+
+const __dirname1 = path.resolve();
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname1, "/frontend/build")));
+
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname1, "frontend", "build", "index.html"))
+  );
+} else {
+  app.get("/", (req, res) => {
+    res.send("API is running..");
+  });
+}
+
+// --------------------------deployment------------------------------
 
 // Error handling middlewares
 app.use(notFound);
