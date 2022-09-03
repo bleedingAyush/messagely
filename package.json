@@ -10,7 +10,7 @@
     "client": "npm start --prefix frontend",
     "dev": "concurrently \"npm run start\" \"npm run client\"",
     "build-client": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend",
-    "build": "concurrently \"npm run start\" \"npm run build-client\"",
+    "build": "concurrently \"npm run server\" \"npm run build-client\"",
     "netlify-postbuild": "npm run build-client"
   },
   "author": "Ayush Kumar",
