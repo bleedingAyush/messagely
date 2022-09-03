@@ -8,7 +8,9 @@
     "start": "nodemon backend/server.js",
     "server": "node backend/server.js",
     "client": "npm start --prefix frontend",
-    "dev": "concurrently \"npm run start\" \"npm run client\""
+    "dev": "concurrently \"npm run start\" \"npm run client\"",
+    "build-client": "npm run build --prefix frontend",
+    "build": "concurrently \"npm run start\" \"npm run build-client\""
   },
   "author": "Ayush Kumar",
   "license": "ISC",
