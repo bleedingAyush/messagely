@@ -42,7 +42,7 @@ interface IImageKitAuthParams {
 export const messagelyApi = createApi({
   reducerPath: "messagelyApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: process.env.REACT_APP_BASE_URL,
+    baseUrl: `${process.env.REACT_APP_BASE_URL}/api`,
     prepareHeaders(headers, api) {
       if (api.endpoint == "uploadPic") return headers;
       const token = localStorage.getItem("auth_token");
