@@ -39,7 +39,18 @@ Visit http://localhost:3000
 
 ## Environment
 
+**Backend**
+
 `MONGODB_CONNECT_URL` MONGO DB URI
+
 `PORT` E.g. 5000
+
 `JWT_SECRET` JSON Web Token Secret
+
 `NODE_ENV` E.g. Development
+
+**FRONTEND**
+
+`REACT_APP_BASE_URL` Your site url or localhost url
+
+`REACT_APP_IMAGEKIT_PUBLIC_KEY` ImageKit public key. Learn more at https://imagekit.io/
