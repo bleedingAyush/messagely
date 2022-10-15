@@ -36,3 +36,10 @@ Visit http://localhost:3000
 **Server:** Node JS, Express JS
 
 **Database:** Mongo DB
+
+## Environment
+
+`MONGODB_CONNECT_URL` MONGO DB URI
+`PORT` E.g. 5000
+`JWT_SECRET` JSON Web Token Secret
+`NODE_ENV` E.g. Development
