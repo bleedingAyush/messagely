@@ -14,7 +14,6 @@ const MessageInput = () => {
   const sendChat = useSendChat();
 
   const handleSendChat = () => {
-    console.log("hanlde", message);
     if (message.length == 0) return;
 
     sendChat(message);

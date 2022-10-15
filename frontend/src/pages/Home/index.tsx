@@ -17,7 +17,6 @@ const Chats = () => {
   const dropdownRef = useClickOutside(closeModal);
   const toggleModal = () => {
     setIsModalVisible(!isModalVisbile);
-    console.log("toggle modal", isModalVisbile);
   };
 
   return (

@@ -25,8 +25,6 @@ const messageSlice = createSlice({
         .map((item: any) => item._id)
         .indexOf(previousId);
 
-      console.log("index assign id", index);
-
       state.messages[index]._id = newId;
     },
   },

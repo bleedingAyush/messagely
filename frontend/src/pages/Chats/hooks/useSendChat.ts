@@ -42,7 +42,6 @@ const useSendChat = () => {
       chatId: id,
       date: "none",
     };
-    // optmistically update the messages cache.
     dispatch(
       messagelyApi.util.updateQueryData("getMessages", argsData, (draft) => {
         const copiedMessageData = {

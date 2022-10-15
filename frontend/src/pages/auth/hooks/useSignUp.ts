@@ -9,7 +9,6 @@ import {
 import { useSetToken } from "../../../hooks/useSetToken";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import FormData from "form-data";
 import { IAuthUser } from "../../../types";
 
 const imagekitPublicKey = process.env.REACT_APP_IMAGEKIT_PUBLIC_KEY;
@@ -127,7 +126,6 @@ const useSignUp = () => {
   useEffect(() => {
     if (isError && error) {
       stopLoading();
-      console.log("error", error);
       if ("data" in error) {
         let message = error?.data?.message;
         toast.error(message);
@@ -155,7 +153,6 @@ const useSignUp = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(inputValues);
     if (inputValues?.password !== inputValues?.confirmPassword) {
       return;
     }

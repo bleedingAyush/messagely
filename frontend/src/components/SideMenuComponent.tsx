@@ -13,7 +13,6 @@ const SideMenuComponent = ({ chat }: any) => {
   const dropdownRef = useClickOutside(closeModal);
   const toggleModal = () => {
     setIsModalVisible(!isModalVisbile);
-    console.log("toggle modal", isModalVisbile);
   };
 
   return (

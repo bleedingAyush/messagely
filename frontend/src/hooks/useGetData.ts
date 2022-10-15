@@ -134,7 +134,6 @@ const useGetData = (chatId: any): IuseGetData => {
     if (isError || isFetching || lastItemDate.chatId == chatId || !data) return;
     if (isSuccess && lastItemDate.chatId != chatId && !isFetching) {
       let organisedData = getOrganisedData(data?.messages, data?.hasMoreData);
-      console.log("mount fetch runningc");
 
       setMessageData(organisedData);
     }
@@ -188,7 +187,6 @@ const useGetData = (chatId: any): IuseGetData => {
     if (filteredQueryData.length) {
       setMessageData((stateData) => {
         const formattedData = getMessage(filteredQueryData, stateData);
-        console.log("formatted data", formattedData);
         return [...formattedData, ...stateData];
       });
     }

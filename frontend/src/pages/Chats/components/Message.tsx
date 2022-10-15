@@ -90,8 +90,6 @@ const Message = memo(
 
 function isEqualProps(prevProps: any, nextProps: any) {
   if (prevProps.index == 0 && nextProps?.prevItem?._id) {
-    // statement to re render the first item when a new
-    // message is addded to the list.
     return false;
   }
   if (prevProps.item._id === nextProps.item._id) {

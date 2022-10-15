@@ -12,9 +12,7 @@ import MessagesBlock from "./MessagesBlock";
 
 const MessageComponent = () => {
   const { id } = useParams();
-  // critical bug: when the device goes offline while loading, the chats and users sends a message
-  // it gets save in the store,  when the device comes back online the message from the store is not added to
-  // the message list
+
   const {
     data: messageData,
     isSuccess,
