@@ -53,4 +53,4 @@ Visit http://localhost:3000
 
 `REACT_APP_BASE_URL` Your site url or localhost url
 
-`REACT_APP_IMAGEKIT_PUBLIC_KEY` ImageKit public key. Learn more at https://imagekit.io/
+`REACT_APP_IMAGEKIT_PUBLIC_KEY` ImageKit public key. It is a CDN with image optimization. Learn more at https://imagekit.io/
