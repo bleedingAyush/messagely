@@ -25,6 +25,8 @@ Start the app
    npm run dev
 ```
 
+Visit http://localhost:3000
+
 ## Tech Stack
 
 **Client:** React JS
