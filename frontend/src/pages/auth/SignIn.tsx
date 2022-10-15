@@ -34,7 +34,6 @@ const SignIn = () => {
 
   useEffect(() => {
     if (isError && error) {
-      console.log("error", error);
       if ("data" in error) {
         let message = error?.data?.message;
         toast.error(message);
@@ -57,7 +56,7 @@ const SignIn = () => {
   };
 
   return (
-    <div className="auth-container">
+    <div className="auth-container" style={{ height: window.innerHeight }}>
       <span className="title">Messagely</span>
       <form action="" className="form" onSubmit={handleSubmit}>
         {inputConfig.map((item: IInputConfig) => {

@@ -12,7 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  position: relative;
   width: 100vw;
 
   .submit-btn {
@@ -41,10 +41,7 @@
   .link {
     position: absolute;
     width: Max(20rem, 25vw);
-    bottom: 5%;
-  }
-
-  .link {
+    top: 85%;
     text-decoration: none;
   }
 

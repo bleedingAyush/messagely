@@ -32,7 +32,7 @@ const SignUp = () => {
   ];
 
   return (
-    <div className="auth-container">
+    <div className="auth-container" style={{ minHeight: window.innerHeight }}>
       <span className="title">Messagely</span>
       <form action="" className="form" onSubmit={handleSubmit}>
         {signUpInputValues.map((item: IInputConfig) => {

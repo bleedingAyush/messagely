@@ -103,7 +103,8 @@ const Modal = ({ id, chat, isModalVisibile, closeModal }: IModal) => {
 
   const isLoadingState =
     isLoading || isGroupChatLoading || isUpdateGroupChatLoading;
-
+  const height =
+    id != "side-menu" ? window.innerHeight - 20 : window.innerHeight / 2;
   return (
     <CSSTransition
       in={isModalVisibile}
@@ -112,12 +113,7 @@ const Modal = ({ id, chat, isModalVisibile, closeModal }: IModal) => {
       timeout={300}
       nodeRef={nodeRef}
     >
-      <div
-        className="modal"
-        id={id}
-        ref={nodeRef}
-        style={{ height: id == "side-menu" ? "50vh" : "96vh" }}
-      >
+      <div className="modal" id={id} ref={nodeRef} style={{ height }}>
         <input
           type="text"
           value={groupSubject}
@@ -140,6 +136,7 @@ const Modal = ({ id, chat, isModalVisibile, closeModal }: IModal) => {
           style={{
             height: "100%",
             overflow: "auto",
+            // overflow: "hidden",
             marginTop: "0.5rem",
           }}
         >

@@ -7,7 +7,12 @@
   scrollbar-width: thin;
   scrollbar-color: #555 $bg-light-variant;
 }
-
+html,
+body,
+:root,
+.App {
+  height: 100%;
+}
 .App {
   display: flex;
 }

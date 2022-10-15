@@ -1,6 +1,7 @@
 @use "../../../constants" as *;
 .profile {
   position: absolute;
+  height: 100%;
 
   .profile-btn {
     background-color: transparent;
@@ -25,16 +26,13 @@
     position: absolute;
     gap: 20px;
     width: calc(max(30vw, 300px) + 10px);
-    height: 100vh;
+    min-height: 100%;
+
     top: 0rem;
-    // padding-top: 5rem;
     align-items: center;
-    // opacity: 0;
     left: 0;
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%);
-
-    // pointer-events: none;
 
     transition: 300ms ease;
     will-change: transform;
@@ -49,6 +47,7 @@
     -webkit-transform: translateX(0%);
     pointer-events: inherit;
     transform: translateX(0%);
+    min-height: 100%;
   }
 
   .loading-container-profilePic {
@@ -203,8 +202,9 @@
 
   .logout {
     width: 70%;
-    position: absolute;
-    bottom: 2rem;
+    position: relative;
+    bottom: 2%;
+
     border-radius: 4px;
 
     display: flex;
@@ -224,7 +224,6 @@
 @media (max-width: 700px) {
   .profile {
     position: absolute;
-    height: 0vh;
     z-index: 3;
     .profile-btn {
       padding-left: 0.8rem;
