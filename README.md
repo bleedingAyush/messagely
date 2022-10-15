@@ -5,6 +5,10 @@ A real time chat app built with MERN Stack.
 
 https://messagely.netlify.app/
 
+
+https://user-images.githubusercontent.com/66837202/195993706-b23d4a91-7dcc-473f-8b4d-797aac0138f9.mp4
+
+
 ## Run Locally
 
 First of all Clone the project
