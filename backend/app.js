@@ -9,13 +9,15 @@ const chatRoute = require("./routes/chatRoutes");
 const messageRoute = require("./routes/messageRoutes");
 const { errorHandler, notFound } = require("./middleware/errorMiddleware");
 const server = require("http").createServer(app);
+const sls = require("serverless-http");
 
 dotenv.config();
 connectDB(); // connect to the database.
 
 app.use(express.json());
 
-app.use(cors());
+app.use(cors({ origin: process.env.WEBSITE_URL }));
+app.disable("x-powered-by");
 
 app.use("/", authRoute);
 app.use("/", userRoute);
@@ -30,7 +32,9 @@ app.use(errorHandler);
 const PORT = process.env.PORT;
 
 const io = require("socket.io")(server, {
-  cors: { origin: "*" },
+  cors: {
+    origin: "*",
+  },
 });
 
 io.on("connection", (socket) => {
@@ -74,3 +78,5 @@ io.on("connection", (socket) => {
 server.listen(PORT, () => {
   console.log("server is running on port 5000");
 });
+
+module.exports.server = sls(app);
