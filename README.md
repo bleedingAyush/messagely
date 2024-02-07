@@ -5,6 +5,8 @@ A real time chat app built with MERN Stack.
 
 https://messagely.netlify.app/
 
+![Demo](https://user-images.githubusercontent.com/66837202/195994075-80869276-0df7-4534-be16-1f094db10758.gif)
+
 ## Run Locally
 
 First of all Clone the project
@@ -25,6 +27,8 @@ Start the app
    npm run dev
 ```
 
+Visit http://localhost:3000
+
 ## Tech Stack
 
 **Client:** React JS
@@ -32,3 +36,21 @@ Start the app
 **Server:** Node JS, Express JS
 
 **Database:** Mongo DB
+
+## Environment
+
+**Backend**
+
+`MONGODB_CONNECT_URL` MONGO DB URI
+
+`PORT` E.g. 5000
+
+`JWT_SECRET` JSON Web Token Secret
+
+`NODE_ENV` E.g. Development
+
+**FRONTEND**
+
+`REACT_APP_BASE_URL` Your site url or localhost url
+
+`REACT_APP_IMAGEKIT_PUBLIC_KEY` ImageKit public key. It is a CDN with image optimization. Learn more at https://imagekit.io/
